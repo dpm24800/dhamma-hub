@@ -586,10 +586,9 @@ def generate_html(
     </style>
 </head>
 <body data-theme="dark">
-<button class="theme-toggle" id="theme-toggle" data-theme-icon="sun" onclick="toggleTheme()" aria-label="Toggle day and night theme">
+<button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle day and night theme">
     <span class="icon icon-sun">&#9728;&#65039;</span>
     <span class="icon icon-moon">&#127769;&#65039;</span>
-    <span class="theme-label">Dark</span>
 </button>
 <div class="wrapper">
     <button class="menu-toggle" aria-label="Toggle table of contents" aria-expanded="false" onclick="toggleToc(true)">
@@ -662,10 +661,6 @@ document.addEventListener('keydown', function(e) {
 });
 function applyTheme(theme) {
     document.body.setAttribute('data-theme', theme);
-    var toggle = document.getElementById('theme-toggle');
-    var label = toggle ? toggle.querySelector('.theme-label') : null;
-    if (toggle) toggle.setAttribute('data-theme-icon', theme === 'dark' ? 'moon' : 'sun');
-    if (label) label.textContent = theme === 'dark' ? 'Light' : 'Dark';
     try { localStorage.setItem('index-theme', theme); } catch (e) {}
 }
 function toggleTheme() {
@@ -794,8 +789,8 @@ def main() -> None:
     parser.add_argument(
         "--link-ext",
         type=str,
-        default="md",
-        help="File extension used in generated links. Use 'html' when building with Jekyll/GitHub Pages.",
+        default="html",
+        help="File extension used in generated links. 'html' for Jekyll/GitHub Pages, 'md' for raw markdown serving.",
     )
 
 
