@@ -5,13 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentation Index</title>
     <style>
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
         :root {
             --bg-color: #f8fafc;
             --text-main: #1e293b;
+            --text-strong: #0f172a;
+            --head-muted: #334155;
+            --head-faint: #475569;
+            --toc-item: #475569;
             --card-bg: #ffffff;
             --border: #e2e8f0;
             --primary: #2563eb;
             --secondary: #64748b;
+            --overlay: rgba(15, 23, 42, 0.5);
+            --shadow: rgba(0, 0, 0, 0.08);
+            --shadow-drawer: rgba(0, 0, 0, 0.15);
+        }
+        [data-theme="dark"] {
+            --bg-color: #0b1220;
+            --text-main: #e2e8f0;
+            --text-strong: #f1f5f9;
+            --head-muted: #94a3b8;
+            --head-faint: #94a3b8;
+            --toc-item: #cbd5e1;
+            --card-bg: #111a2c;
+            --border: #1e293b;
+            --primary: #60a5fa;
+            --secondary: #94a3b8;
+            --overlay: rgba(0, 0, 0, 0.6);
+            --shadow: rgba(0, 0, 0, 0.35);
+            --shadow-drawer: rgba(0, 0, 0, 0.5);
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -20,7 +44,33 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            transition: background-color 0.25s ease, color 0.25s ease;
         }
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 40;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 0.5rem 0.9rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+            cursor: pointer;
+            box-shadow: 0 1px 3px var(--shadow);
+        }
+        .theme-toggle .icon {
+            font-size: 1rem;
+            line-height: 1;
+        }
+        body[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+        body[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
         .wrapper {
             display: flex;
             max-width: 1200px;
@@ -34,8 +84,9 @@
             padding: 2.5rem;
             border-radius: 8px;
             border: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            box-shadow: 0 1px 3px var(--shadow-drawer);
             min-width: 0;
+            transition: background-color 0.25s ease, border-color 0.25s ease;
         }
         .sidebar {
             width: 280px;
@@ -49,15 +100,56 @@
             padding: 1.5rem;
             overflow-y: auto;
             box-sizing: border-box;
+            z-index: 30;
+            transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
         }
-        @media (max-width: 850px) {
-            .wrapper { flex-direction: column; }
-            .sidebar { width: 100%; position: static; height: auto; }
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.5rem 0.8rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+            cursor: pointer;
+            box-shadow: 0 1px 3px var(--shadow);
         }
-        h1 { font-size: 2.25rem; margin-top: 0; margin-bottom: 1.5rem; color: #0f172a; }
-        h2 { font-size: 1.5rem; margin-top: 2.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.4rem; color: #0f172a; }
-        h3 { font-size: 1.25rem; margin-top: 2rem; color: #334155; }
-        h4 { font-size: 1.1rem; margin-top: 1.5rem; color: #475569; }
+        .menu-bars {
+            width: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .menu-bar {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            border-radius: 1px;
+        }
+        .sidebar-close {
+            display: none;
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            line-height: 1;
+            cursor: pointer;
+            color: var(--secondary);
+            padding: 0.25rem 0.5rem;
+        }
+        .toc-overlay {
+            display: none;
+        }
+        h1 { font-size: clamp(1.6rem, 4vw, 2.25rem); margin-top: 0; margin-bottom: 1.5rem; color: var(--text-strong); }
+        h2 { font-size: clamp(1.2rem, 3vw, 1.5rem); margin-top: 2.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.4rem; color: var(--text-strong); }
+        h3 { font-size: clamp(1.1rem, 2.5vw, 1.25rem); margin-top: 2rem; color: var(--head-muted); }
+        h4 { font-size: clamp(1rem, 2vw, 1.1rem); margin-top: 1.5rem; color: var(--head-faint); }
         .meta-group {
             background: var(--bg-color);
             border: 1px solid var(--border);
@@ -74,16 +166,73 @@
         a:hover { text-decoration: underline; }
         .size-badge { font-size: 0.8rem; color: var(--secondary); white-space: nowrap; }
         .toc-title { font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--secondary); margin-bottom: 1rem; }
-        .toc-item { display: block; padding: 0.3rem 0; color: #475569; font-size: 0.9rem; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+        .toc-item { display: block; padding: 0.3rem 0; color: var(--toc-item); font-size: 0.9rem; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
         .toc-item:hover { color: var(--primary); }
+        @media (max-width: 900px) {
+            .wrapper { display: block; padding: 1rem; }
+            .menu-toggle { display: inline-flex; margin-bottom: 1rem; }
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: min(80vw, 320px);
+                height: 100%;
+                max-height: 100vh;
+                border-radius: 0;
+                border-left: none;
+                border-bottom: none;
+                border-top: none;
+                padding: 3rem 1.5rem 1.5rem;
+                transform: translateX(-105%);
+                box-shadow: 4px 0 16px var(--shadow-drawer);
+            }
+            .sidebar.open { transform: translateX(0); }
+            .sidebar-close { display: block; }
+            .toc-overlay.open {
+                display: block;
+                position: fixed;
+                inset: 0;
+                background: var(--overlay);
+                z-index: 20;
+            }
+            .toc-title { margin-bottom: 0.5rem; }
+            .main-panel { padding: 1.5rem 1.25rem; }
+            h1 { font-size: 1.75rem; }
+            h2 { font-size: 1.3rem; margin-top: 1.5rem; }
+            h3 { font-size: 1.15rem; margin-top: 1.25rem; }
+            h4 { font-size: 1.05rem; margin-top: 1rem; }
+            .meta-group { padding: 0.75rem 1rem; }
+        }
+        @media (max-width: 480px) {
+            .wrapper { padding: 0.5rem; }
+            .main-panel { padding: 1.25rem 1rem; }
+            li { flex-wrap: wrap; gap: 0.25rem 0.5rem; }
+            a { font-size: 0.95rem; }
+            .toc-item { font-size: 0.85rem; }
+            .meta-group p { font-size: 0.9rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * { scroll-behavior: auto !important; }
+        }
     </style>
 </head>
-<body>
+<body data-theme="dark">
+<button class="theme-toggle" id="theme-toggle" data-theme-icon="sun" onclick="toggleTheme()" aria-label="Toggle day and night theme">
+    <span class="icon icon-sun">&#9728;&#65039;</span>
+    <span class="icon icon-moon">&#127769;&#65039;</span>
+    <span class="theme-label">Dark</span>
+</button>
 <div class="wrapper">
-    <nav class="sidebar">
+    <button class="menu-toggle" aria-label="Toggle table of contents" aria-expanded="false" onclick="toggleToc(true)">
+        <span class="menu-bars"><span class="menu-bar"></span><span class="menu-bar"></span><span class="menu-bar"></span></span>
+        Contents
+    </button>
+    <div class="toc-overlay" id="toc-overlay" onclick="toggleToc(false)"></div>
+    <nav class="sidebar" id="toc-sidebar">
+        <button class="sidebar-close" aria-label="Close table of contents" onclick="toggleToc(false)">&times;</button>
         <div class="toc-title">Table of Contents</div>
         <a class="toc-item" href="#sec-0" title="Dhamma-Hub">Dhamma-Hub</a>
-        <a class="toc-item" href="#sec-1" title="General">General</a>
+        <a class="toc-item" href="#sec-1" title="Hillside-Hermitage">Hillside-Hermitage</a>
         <a class="toc-item" href="#sec-2" title="Perfect-Life-Seven-Gn">Perfect-Life-Seven-Gn</a>    </nav>
 
 
@@ -93,8 +242,8 @@
         <div class="meta-group">
             <p>Automatically generated index of documentation assets.</p>
             <p><strong>Total Articles:</strong> 18</p>
-            <p><strong>Generated On:</strong> 2026-08-18 03:02:51</p>
-            <p><strong>Top-Level Categories (Depth 1):</strong> 2</p>
+            <p><strong>Generated On:</strong> 2026-08-18 03:23:41</p>
+            <p><strong>Top-Level Categories (Depth 1):</strong> 3</p>
             <p><strong>Subcategories (Depth 2):</strong> 0</p>
             <p><strong>Sub-Subcategories (Depth 3):</strong> 0</p>
         </div>
@@ -102,64 +251,64 @@
             <h2>Dhamma-Hub</h2>
             <ul>
                 <li>
-                    <a href="subtitles/dhamma-hub/how-to-endure-a-screaming-mind-refined.md">how-to-endure-a-screaming-mind-refined</a>
+                    <a href="subtitles/dhamma-hub/how-to-endure-a-screaming-mind-refined.html">how-to-endure-a-screaming-mind-refined</a>
                     <span class="size-badge">(30.4 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/dhamma-hub/how-to-endure-a-screaming-mind-article.md">how-to-endure-a-screaming-mind-article</a>
+                    <a href="subtitles/dhamma-hub/how-to-endure-a-screaming-mind-article.html">how-to-endure-a-screaming-mind-article</a>
                     <span class="size-badge">(16.9 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/dhamma-hub/how-to-endure-a-screaming-mind-summary.md">how-to-endure-a-screaming-mind-summary</a>
+                    <a href="subtitles/dhamma-hub/how-to-endure-a-screaming-mind-summary.html">how-to-endure-a-screaming-mind-summary</a>
                     <span class="size-badge">(11.7 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/dhamma-hub/how-to-endure-a-screaming-mind-summary-points.md">how-to-endure-a-screaming-mind-summary-points</a>
+                    <a href="subtitles/dhamma-hub/how-to-endure-a-screaming-mind-summary-points.html">how-to-endure-a-screaming-mind-summary-points</a>
                     <span class="size-badge">(2.5 KB)</span>
                 </li>
             </ul>
         </section>
         <section id="sec-1" style="scroll-margin-top: 2rem;">
-            <h2>General</h2>
+            <h2>Hillside-Hermitage</h2>
             <ul>
                 <li>
-                    <a href="subtitles/the-hidden-danger-of-insignificant-desires-sense-restraint-explained-refined.md">the-hidden-danger-of-insignificant-desires-sense-restraint-explained-refined</a>
+                    <a href="subtitles/hillside-hermitage/the-hidden-danger-of-insignificant-desires-sense-restraint-explained-refined.html">the-hidden-danger-of-insignificant-desires-sense-restraint-explained-refined</a>
                     <span class="size-badge">(16.9 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article-nep-gem.md">the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article-nep-gem</a>
+                    <a href="subtitles/hillside-hermitage/the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article-nep-gem.html">the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article-nep-gem</a>
                     <span class="size-badge">(36.6 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article-nep-gpt-gem-merged.md">the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article-nep-gpt-gem-merged</a>
+                    <a href="subtitles/hillside-hermitage/the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article-nep-gpt-gem-merged.html">the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article-nep-gpt-gem-merged</a>
                     <span class="size-badge">(40.4 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article-nep-gpt.md">the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article-nep-gpt</a>
+                    <a href="subtitles/hillside-hermitage/the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article-nep-gpt.html">the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article-nep-gpt</a>
                     <span class="size-badge">(37.4 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article.md">the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article</a>
+                    <a href="subtitles/hillside-hermitage/the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article.html">the-hidden-danger-of-insignificant-desires-sense-restraint-explained-article</a>
                     <span class="size-badge">(14.2 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/the-hidden-danger-of-insignificant-desires-sense-restraint-explained-summary.md">the-hidden-danger-of-insignificant-desires-sense-restraint-explained-summary</a>
+                    <a href="subtitles/hillside-hermitage/the-hidden-danger-of-insignificant-desires-sense-restraint-explained-summary.html">the-hidden-danger-of-insignificant-desires-sense-restraint-explained-summary</a>
                     <span class="size-badge">(9.9 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/the-hidden-danger-of-insignificant-desires-sense-restraint-explained-summary-points.md">the-hidden-danger-of-insignificant-desires-sense-restraint-explained-summary-points</a>
+                    <a href="subtitles/hillside-hermitage/the-hidden-danger-of-insignificant-desires-sense-restraint-explained-summary-points.html">the-hidden-danger-of-insignificant-desires-sense-restraint-explained-summary-points</a>
                     <span class="size-badge">(5.6 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/why-is-sensuality-always-a-problem-refined.md">why-is-sensuality-always-a-problem-refined</a>
+                    <a href="subtitles/hillside-hermitage/why-is-sensuality-always-a-problem-refined.html">why-is-sensuality-always-a-problem-refined</a>
                     <span class="size-badge">(8.5 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/why-is-sensuality-always-a-problem-article.md">why-is-sensuality-always-a-problem-article</a>
+                    <a href="subtitles/hillside-hermitage/why-is-sensuality-always-a-problem-article.html">why-is-sensuality-always-a-problem-article</a>
                     <span class="size-badge">(6.2 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/why-is-sensuality-always-a-problem-summary.md">why-is-sensuality-always-a-problem-summary</a>
+                    <a href="subtitles/hillside-hermitage/why-is-sensuality-always-a-problem-summary.html">why-is-sensuality-always-a-problem-summary</a>
                     <span class="size-badge">(6.1 KB)</span>
                 </li>
             </ul>
@@ -168,23 +317,62 @@
             <h2>Perfect-Life-Seven-Gn</h2>
             <ul>
                 <li>
-                    <a href="subtitles/perfect-life-seven-gn/how-to-train-your-mind-to-stay-peaceful-like-a-rock-refined.md">how-to-train-your-mind-to-stay-peaceful-like-a-rock-refined</a>
+                    <a href="subtitles/perfect-life-seven-gn/how-to-train-your-mind-to-stay-peaceful-like-a-rock-refined.html">how-to-train-your-mind-to-stay-peaceful-like-a-rock-refined</a>
                     <span class="size-badge">(10.7 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/perfect-life-seven-gn/how-to-train-your-mind-to-stay-peaceful-like-a-rock-article.md">how-to-train-your-mind-to-stay-peaceful-like-a-rock-article</a>
+                    <a href="subtitles/perfect-life-seven-gn/how-to-train-your-mind-to-stay-peaceful-like-a-rock-article.html">how-to-train-your-mind-to-stay-peaceful-like-a-rock-article</a>
                     <span class="size-badge">(8.1 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/perfect-life-seven-gn/how-to-train-your-mind-to-stay-peaceful-like-a-rock-summary.md">how-to-train-your-mind-to-stay-peaceful-like-a-rock-summary</a>
+                    <a href="subtitles/perfect-life-seven-gn/how-to-train-your-mind-to-stay-peaceful-like-a-rock-summary.html">how-to-train-your-mind-to-stay-peaceful-like-a-rock-summary</a>
                     <span class="size-badge">(5.0 KB)</span>
                 </li>
                 <li>
-                    <a href="subtitles/perfect-life-seven-gn/how-to-train-your-mind-to-stay-peaceful-like-a-rock-summary-points.md">how-to-train-your-mind-to-stay-peaceful-like-a-rock-summary-points</a>
+                    <a href="subtitles/perfect-life-seven-gn/how-to-train-your-mind-to-stay-peaceful-like-a-rock-summary-points.html">how-to-train-your-mind-to-stay-peaceful-like-a-rock-summary-points</a>
                     <span class="size-badge">(2.1 KB)</span>
                 </li>
             </ul>
         </section>    </main>
 </div>
+<script>
+function toggleToc(open) {
+    var sidebar = document.getElementById('toc-sidebar');
+    var overlay = document.getElementById('toc-overlay');
+    var toggle = document.querySelector('.menu-toggle');
+    if (open) {
+        sidebar.classList.add('open');
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        if (toggle) toggle.setAttribute('aria-expanded', 'true');
+    } else {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    }
+}
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') toggleToc(false);
+});
+function applyTheme(theme) {
+    document.body.setAttribute('data-theme', theme);
+    var toggle = document.getElementById('theme-toggle');
+    var label = toggle ? toggle.querySelector('.theme-label') : null;
+    if (toggle) toggle.setAttribute('data-theme-icon', theme === 'dark' ? 'moon' : 'sun');
+    if (label) label.textContent = theme === 'dark' ? 'Light' : 'Dark';
+    try { localStorage.setItem('index-theme', theme); } catch (e) {}
+}
+function toggleTheme() {
+    var current = document.body.getAttribute('data-theme') || 'light';
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+}
+(function initTheme() {
+    var saved = null;
+    try { saved = localStorage.getItem('index-theme'); } catch (e) {}
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(saved || (prefersDark ? 'dark' : 'dark'));
+})();
+</script>
 </body>
 </html>

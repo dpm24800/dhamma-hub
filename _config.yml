@@ -1,0 +1,20 @@
+# Minimal GitHub Pages / Jekyll configuration for the subtitle library.
+title: Subtitle Library
+description: A library of refined Dhamma transcripts and articles.
+markdown: kramdown
+highlighter: rouge
+
+# Static / build artifacts we never want processed as pages.
+exclude:
+  - autoindex.py
+  - index.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Give every subtitle markdown file a minimal reading layout.
+defaults:
+  - scope:
+      path: "subtitles"
+    values:
+      layout: reader

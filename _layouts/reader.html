@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: page.name }}</title>
+    <style>
+        :root {
+            --bg: #0b1220;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --accent: #60a5fa;
+            --card: #111a2c;
+            --border: #1e293b;
+            --code-bg: #0f172a;
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+        }
+        .topbar-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .topbar a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .topbar a:hover { text-decoration: underline; }
+        .topbar-file {
+            color: var(--muted);
+            font-size: 0.85rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.25rem 4rem;
+        }
+        .content h1 {
+            font-size: 1.9rem;
+            color: #f1f5f9;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        .content h2 { font-size: 1.4rem; color: #f1f5f9; margin-top: 2.2rem; }
+        .content h3 { font-size: 1.2rem; color: #e2e8f0; margin-top: 1.8rem; }
+        .content h4 { font-size: 1.05rem; color: var(--muted); }
+        .content a { color: var(--accent); }
+        .content blockquote {
+            margin: 1rem 0;
+            padding: 0.75rem 1.25rem;
+            border-left: 4px solid var(--accent);
+            background: var(--card);
+            color: var(--text);
+            border-radius: 0 6px 6px 0;
+        }
+        .content code {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0.1em 0.35em;
+            font-size: 0.9em;
+        }
+        .content pre {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            overflow-x: auto;
+        }
+        .content pre code {
+            background: none;
+            border: none;
+            padding: 0;
+            color: var(--text);
+        }
+        .content img { max-width: 100%; height: auto; border-radius: 8px; }
+        .content table {
+            border-collapse: collapse;
+            width: 100%;
+            display: block;
+            overflow-x: auto;
+        }
+        .content th, .content td {
+            border: 1px solid var(--border);
+            padding: 0.5rem 0.75rem;
+        }
+        .content th { background: var(--card); }
+        .content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+        @media (max-width: 480px) {
+            .content h1 { font-size: 1.6rem; }
+            .topbar-file { max-width: 55%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <div class="topbar-inner">
+            <a href="{{ site.baseurl | default: '' }}/index.html">&larr; Index</a>
+            <span class="topbar-file">{{ page.name }}</span>
+        </div>
+    </div>
+    <main class="content">
+        {{ content }}
+    </main>
+</body>
+</html>
