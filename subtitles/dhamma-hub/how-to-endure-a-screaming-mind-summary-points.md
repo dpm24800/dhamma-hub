@@ -1,3 +1,5 @@
+---
+---
 # How to Endure a Screaming Mind — 15-Point Summary
 
 1. **The ideal:** be patient with any state of mind, don't reject or escape it — escaping brings relief but leaves the underlying problem (being affected) untouched.

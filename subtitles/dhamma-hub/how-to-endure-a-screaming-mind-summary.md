@@ -1,3 +1,5 @@
+---
+---
 # How to Endure a Screaming Mind — Summary
 
 *A bullet-point summary of the key points*

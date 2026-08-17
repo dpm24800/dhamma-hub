@@ -1,3 +1,5 @@
+---
+---
 # How to Train Your Mind to Stay Peaceful Like a Rock — 15-Point Summary
 
 1. **The definition:** a strong mindset is being unshaken by praise and blame, like a rock unmoved by the storm (the Buddha's *Dhammapada* image).

@@ -1,3 +1,5 @@
+---
+---
 # How to Train Your Mind to Stay Peaceful Like a Rock — Summary
 
 *A bullet-point summary of the key points*

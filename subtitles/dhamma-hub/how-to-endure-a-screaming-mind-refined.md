@@ -1,3 +1,5 @@
+---
+---
 # How to Endure a Screaming Mind
 
 ## Refined Transcript

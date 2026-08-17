@@ -1,3 +1,5 @@
+---
+---
 # Why Is Sensuality Always a Problem?
 
 *An essay drawn from a Dhamma reflection*

@@ -1,3 +1,5 @@
+---
+---
 # The Hidden Danger of Insignificant Desires: Sense Restraint Explained — 25-Point Summary
 
 1. **The question:** how to deepen one's perception of danger so that small acts are no longer dismissed as insignificant — this is the practice of contemplating danger.

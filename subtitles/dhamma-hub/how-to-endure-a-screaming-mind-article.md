@@ -1,3 +1,5 @@
+---
+---
 # How to Endure a Screaming Mind
 
 *An essay drawn from a Dhamma reflection*

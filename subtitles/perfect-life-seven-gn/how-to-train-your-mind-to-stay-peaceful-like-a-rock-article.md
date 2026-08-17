@@ -1,3 +1,5 @@
+---
+---
 # How to Train Your Mind to Stay Peaceful Like a Rock
 
 *An article drawn from a Dhamma reflection*

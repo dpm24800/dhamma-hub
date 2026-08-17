@@ -1,3 +1,5 @@
+---
+---
 # The Hidden Danger of Insignificant Desires: Sense Restraint Explained
 
 *An article drawn from a Dhamma reflection*
