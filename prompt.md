@@ -1,0 +1,76 @@
+make an another refined .md of this: refine the language of this subtitle
+write the very thing in the form of article as different md
+summarite the same thing in bullet points as seperate md. don't skip any major points
+
+
+1. make an another .md of {How to Endure a Screaming Mind-autogen.txt} by refining the language of this subtitle
+2. Write the very thing in the form of article as different md
+3. Summarize the same thing/article in bullet points as seperate md without skipp any major points.
+4. Summarize the last summary in 15 bullet points
+
+Do all things in order, latter operation should depend upon previous file.
+keep all filenames lowercased-slug.
+
+---
+
+# Prompt
+filename = "the-hidden-danger-of-insignificant-desires-sense-restraint-explained-autogen.txt"
+number-of-points = 20-25
+
+
+Process the source file {filename} in the following order. Each step must use the output of the previous step as its input.
+
+### Step 1 — Refined Markdown
+
+Create a new Markdown file based on {filename}.
+
+* Preserve the original meaning, ideas, arguments, and important details.
+* Refine the language, especially the subtitle, so it reads naturally, clearly, and professionally.
+* Improve grammar, wording, flow, and readability without changing the intended meaning.
+* Do not omit any important content.
+* Save the result as a separate `.md` file.
+
+### Step 2 — Article
+
+Using **the Markdown file produced in Step 1 as the source**, rewrite the content into a coherent, polished article.
+
+* Organize the ideas into a logical structure.
+* Use appropriate headings and subheadings where helpful.
+* Improve transitions and overall readability.
+* Preserve all major ideas and arguments from Step 1.
+* Do not introduce unrelated ideas or omit important points.
+* Save this as a separate `.md` file.
+
+### Step 3 — Comprehensive Bullet-Point Summary
+
+Using **the article produced in Step 2 as the source**, create a separate Markdown file containing a comprehensive bullet-point summary.
+
+* Capture all major points, arguments, insights, and conclusions.
+* Do not skip any major point from the article.
+* Keep the summary substantially shorter than the article while preserving its essential meaning.
+* Organize related points hierarchically when useful.
+* Use Markdown bullet points.
+* Save this as a separate `.md` file.
+
+### Step 4 — {number-of-points}-Point Summary
+
+Using **only the bullet-point summary produced in Step 3 as the source**, create the final condensed summary.
+
+* Summarize the previous summary into **exactly {number-of-points} bullet points**.
+* Each bullet should represent an important idea from the previous summary.
+* Do not introduce new information.
+* Do not combine points in a way that causes any major theme to disappear.
+* Make each bullet concise but meaningful.
+* Save this as a separate `.md` file.
+
+### Processing Requirements
+
+* Perform the steps **strictly in order**:
+  **Source → Step 1 → Step 2 → Step 3 → Step 4**
+* Each later step **must depend on the immediately preceding file**, rather than going back to the original source.
+* Keep the meaning consistent across all four stages.
+* Do not skip, merge, or reorder any step.
+* Create **four separate Markdown files**.
+* **All filenames must be lowercase and slug-formatted**, using hyphens instead of spaces.
+* Avoid uppercase letters, spaces, and special characters in filenames.
+* Use descriptive filenames that make the processing stage clear.

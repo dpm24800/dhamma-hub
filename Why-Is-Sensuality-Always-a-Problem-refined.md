@@ -1,0 +1,43 @@
+# Why Is Sensuality Always a Problem?
+
+## Refined Transcript
+
+**Speaker 1:** You always emphasize how important it is to question why we are doing what we are doing. For example, if we're trying to practice abandoning sensuality, it's important — in order to do that properly — to understand what the actual problem with sensuality is. So I thought an interesting way of framing that reflection might be: *what would hypothetically have to change in order for sensuality to no longer be a problem?*
+
+**Speaker 2:** I think the main thing would be this: hypothetically, if sensuality — sensual desire, engaging with it — did not have the same effect on *citta* that it has, then it wouldn't be a problem.
+
+It's not like people sometimes say, that sensuality is a problem because it harms others and such. You can have sensual desires that don't involve others and don't really harm anyone else. But you cannot have sensual desires that do not harm the mind.
+
+Now, when I say "harm the mind," I don't mean some obvious torture or torment inflicted because of the sensual desire. I mean it in a subtle way: sensuality is that which keeps the animal liable to be affected by everything else it experiences through the senses. It's impossible to engage with sensuality without reinforcing that very nature — that wilderness — of the animal. The best example, as I've given many times, is like the suitors: you give it a wild elephant. Sensuality is what keeps it wild. And obviously, a lot of sensuality, a lot of non-restraint, will make it even wilder.
+
+So really, the question "why is sensuality a problem?" should be reframed as "why is having a wild mind a problem?" At least to some degree. Because when I say "wild," I don't mean only that one extreme of wilderness. Even a little trace of old wilderness tendencies — if it's left, it's a problem.
+
+For as long as there is at least some degree of sensuality that isn't perceived as dangerous, as unworthy, as something that should be infinitely abandoned, there's going to be some wilderness tendency left. So "why is sensuality a problem?" becomes "why are wilderness tendencies a problem?" It's for the very reason that when that same animal doesn't get what it wants, or gets what it doesn't want, or loses what it had, or doesn't have enough for what it desires — it will turn against you. It will be agitated. It will be affected. It will be displeased. And you are the one who will pay the price.
+
+That's why there's no such thing as "oh, this little sensuality is fine." Any action, any project, any intention rooted in the desire for pleasure of the senses carries that wilderness.
+
+That's what the Buddha said. He compared sensuality — it doesn't matter how much. Sure, it's better to have less sensuality than more, but it's still sensuality. From the point of view of somebody who wants to be truly free, imperturbable, and not liable to suffering, the entire spectrum of sensual intensities needs to be regarded in the same manner. Whether it's a lot or a little, it's the same — like feces. Even a tiny little bit of feces is still basically the same thing: same smell, same taste, same disgust. Whether it's a lot or a little, it's still the same thing you don't want to have anything to do with.
+
+So if hypothetically sensuality had absolutely no effect on the wilderness of *citta* — if it didn't make it more wild, keep it wild, or maintain the underlying tendencies — it would not be a problem. It just wouldn't be an issue. Like other things that don't play into that principle of keeping that connection with the wilderness from which you're trying to pull back the elephant, the mind, and tame it. If you had no connection to that, there would be no problem. And things that don't have that connection aren't a problem.
+
+That's why your intention is the most important thing you need to be perpetually aware of — not the sensations, not whatever else practices you, but your current moment-to-moment attention. What is it that your mind wants? Are you losing perspective in regard to that? Or are you maintaining the perspective and not allowing it to be rooted in these desires for sense pleasures, irritation, and so on? Because that's really the practice. If you keep an eye on it, the mind cannot just go there on its own. And that's how you would eventually calm it.
+
+As the suttas say, sever the tendencies of the elephant that wants to go back to the forest. And after that, your *citta* is pliable. Then, if you direct it towards the destruction of taints, the taints are destroyed. Directed towards remembering past lives, the past lives are remembered. But not before pliability is developed.
+
+You might get a right view before pliability is fully developed, because it's not like you have to fully train the cheetah before any understanding of Dhamma can take place. The understanding of Dhamma will gradually start taking place sooner. That's why the panels are going to go beyond again. But the attitude of taming the mind away from the wilderness is an absolute must.
+
+That's why again, the suttas don't talk in terms of specificities — I'm sure he did, but it hasn't been recorded anymore. But the one thing that remains unchanged is that the mind has to be above the hindrances, freed at least to a degree, sufficiently kept away from the wilderness tendencies, from the hindrances, for the possibility of understanding Dhamma to take place — if there is right instruction, right reflection, honesty, and everything else we talk about.
+
+But if you have everything else — honesty, right instruction, right reflection, everything — but you haven't sufficiently dried the mind not just from the physical act of sensuality, but from mental intentions rooted in it, then none of that will make a difference. None of that can make the fire of wisdom light up. That's why it's truly not negotiable.
+
+And if people do struggle to say no to sensuality, it is definitely helpful to realize why even a little bit of conscious giving into these things carries the same weight, the same implications, and keeps the mind tethered to the same wilderness. So, sooner or later, if circumstances change, if you lose your composure for one reason or another, that thread will pull the whole thing back. And then you have again the mass of suffering waiting for you that you have to deal with.
+
+That's exactly what the suttas meant when they said even those monks who were practicing rightly but then became careless and overly confident, or maybe just complacent and satisfied with understanding the Dhamma and taming the mind to a degree — they chose to follow desire a little bit, then a little bit more, which led to a little bit more, which, from their starting point, was actually a lot more now. And then the sutta says: "And that, monks, is when they experience death, or deathly suffering — suffering as of those who are dying — on account of the mind now re-infected with sensuality."
+
+They can't lose the wisdom, you know. A *sotāpanna* can't lose his wisdom of *sotāpatti*. But if he becomes careless and starts engaging with sensuality — because yes, overall wisdom remains unchanged — the animal is still going to be something he's paired with, something he'll have to put up with, and it's going to be worse for him.
+
+Because somebody who doesn't have perspective, who never experienced a correctly calmed animal due to right view and understanding — for them, it's all they know. So it doesn't matter: the absolutely wild, raging cheetah is almost every day, so it's kind of fine. They don't really see the difference.
+
+But for somebody who has calmed the cheetah enough, saw it, withdrew it from sensuality, dried it up, got the right view and established in it, and then allows their mind to go back — the discrepancy is like dying, like the pains of those who are dying. Because you can't ignore the right context, obviously, but you let your mind go back to basically what's fully — well, not fully understood, because if it were fully understood, a *sotāpanna* would not have returned to it. But certainly the framework of it — the whole of samsara and the aggregates — had been sufficiently understood, and now you let the mind go back into it. So the weight, the impurity of it, will be felt a lot worse and a lot more unpleasantly.
+
+That's again because that principle just cannot change. Sensuality always partakes in the wilderness, always keeps the mind wild. And if it's not uprooted, it always carries the risk of pulling the animal back. And then again, you are the one who will have to pay the price for it.
