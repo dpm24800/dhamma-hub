@@ -1,18 +1,3 @@
-make an another refined .md of this: refine the language of this subtitle
-write the very thing in the form of article as different md
-summarite the same thing in bullet points as seperate md. don't skip any major points
-
-
-1. make an another .md of {How to Endure a Screaming Mind-autogen.txt} by refining the language of this subtitle
-2. Write the very thing in the form of article as different md
-3. Summarize the same thing/article in bullet points as seperate md without skipp any major points.
-4. Summarize the last summary in 15 bullet points
-
-Do all things in order, latter operation should depend upon previous file.
-keep all filenames lowercased-slug.
-
----
-
 # Prompt
 filename = "the-hidden-danger-of-insignificant-desires-sense-restraint-explained-autogen.txt"
 number-of-points = 20-25
@@ -52,7 +37,7 @@ Using **the article produced in Step 2 as the source**, create a separate Markdo
 * Use Markdown bullet points.
 * Save this as a separate `.md` file.
 
-### Step 4 — {number-of-points}-Point Summary
+### Step 4 — Summary Points
 
 Using **only the bullet-point summary produced in Step 3 as the source**, create the final condensed summary.
 
@@ -61,7 +46,7 @@ Using **only the bullet-point summary produced in Step 3 as the source**, create
 * Do not introduce new information.
 * Do not combine points in a way that causes any major theme to disappear.
 * Make each bullet concise but meaningful.
-* Save this as a separate `.md` file.
+* Save this as a separate `~summary-points.md` file. as 
 
 ### Processing Requirements
 
